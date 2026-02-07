@@ -1,0 +1,4 @@
+s3fs
+pandas
+yt-dlp
+boto3

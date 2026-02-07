@@ -1,0 +1,5 @@
+tqdm
+pandas
+yt-dlp
+boto3
+python-dotenv

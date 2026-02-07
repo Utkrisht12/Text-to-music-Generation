@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  youtube_id_lambda:
+    image: youtube_id_lambda
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        ACTUAL_LAMBDA: lambda_youtube_id
+        LAMBDA_ENTRYPOINT: lambda_handler
+    ports:
+      - 9000:8080
+    env_file: .env
+
+  youtube_download:
+    image: youtube_download
+    build:
+      context: ./youtube_download/
+      dockerfile: ./Dockerfile
+    env_file: ./youtube_download/.env
+
+  youtube_id:
+    image: youtube_id
+    build:
+      context: ./youtube_id/
+      dockerfile: ./Dockerfile
+    env_file: ./youtube_id/.env
+
+  trainer_audiolm:
+    image: trainer_audiolm
+    build:
+      context: ./trainer_audiolm/
+      dockerfile: ./Dockerfile
+    env_file: ./trainer_audiolm/.env
+    command: python app.py semantic --run_number 0

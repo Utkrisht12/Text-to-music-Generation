@@ -1,0 +1,10 @@
+pandas
+python-dotenv
+audiolm-pytorch
+laion-clap
+huggingface_hub
+beartype
+einops
+vector-quantize-pytorch
+wandb
+torchvision

@@ -1,0 +1,9 @@
+{
+    "file_name": "msd_processed/CA.tsv",
+    "batch_size": 5,
+    "range_upd": [
+160,
+240
+    ],
+    "debugging": false
+}
